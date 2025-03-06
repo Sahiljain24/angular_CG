@@ -11,4 +11,8 @@ export class AppComponent {
   title = 'Helloworld';
   message : string ="HEllo from bridgelabz";
   imageURL: string="assets/logoBridge.jpg";
+  openBridgelabzSite() : void{
+      window.open("https://www.bridgelabz.com", "_blank")
+  }
 }
+
