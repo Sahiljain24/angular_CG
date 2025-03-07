@@ -1,14 +1,31 @@
-
-<div>
-  <h1>{{ message }} by {{userName}}</h1>  <!-- ✅ Corrected Interpolation -->
-   
-</div>
 <div>
   <label for="name">Enter your name: </label>
-  <input id="name" type="text" [(ngModel)]="userName" placeholder="Your Name">
-</div>
-<div>
-  <img [src]="imageURL" alt="photo" width="200" (click) ="openBridgelabzSite()">
+  <input 
+    id="name" 
+    type="text" 
+    [(ngModel)]="userName" 
+    (input)="validateUserName($event)" 
+    placeholder="Your Name"
+  />
 </div>
 
-<router-outlet></router-outlet>  <!-- ✅ Corrected router-outlet syntax -->
+<div>
+ <p style="color: red;">{{ this.errorMessage }}</p>
+
+ <h1>
+  
+  Hello {{userName }} from BridgeLabz!
+</h1>
+
+</div>
+
+<div>
+  <img 
+    [src]="imageURL" 
+    alt="photo" 
+    width="200" 
+    (click)="openBridgelabzSite()"
+  />
+</div>
+
+<router-outlet></router-outlet>
